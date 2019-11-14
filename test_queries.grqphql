@@ -1,0 +1,45 @@
+# Write your query or mutation here
+mutation createTodo {
+  createTodo(input:{text:"todo22", userId:"1"}) {
+    user {
+      id
+    }
+    text
+    done
+  }
+}
+
+mutation createTodo3 {
+  createTodo(input:{text: "my third todo", userId:"2"}) {
+    user {
+      id
+    }
+    text
+    done
+  }
+}
+
+query findTodos {
+  	todos {
+      text
+      done
+      id
+      user {
+        name
+      }
+    }
+}
+
+mutation markDone {
+  markDone(input:"T8674665223082153551") {
+    text
+    done
+  }
+}
+
+mutation markDoneError {
+  markDone(input:"bogusTODO") {
+    text
+    done
+  }
+}
